@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .blue {
+        color: blue;
+      }
+      .red {
+          color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <div>
+      <p>We will be learning</p>
+      <ul>
+        <li class="odd">Adding To The DOM</li>
+        <li>Querying The DOM</li>
+        <li class="odd">Changing The DOM</li>
+        <li>Event Listeners</li>
+      </ul>
+      <input type="text" class="input-text" />
+      <input type="button" class="add-topic"  value="Add" />
+    </div>
+    <form id="page-form">
+      <input type="text" class="input-text2"/>
+      <input type="submit" value="Click Me" />
+    </form>
+    <script defer>
+        const btnSubmit = document.querySelector(".add-topic");
+        // const txtInput = document.querySelector(".input-text");
+        const myUL = document.querySelector("ul");
+        const theButton = document.querySelector("input[type=submit]");
+        const theText = document.querySelector(".input-text2");
+        const div = document.querySelector("div");
+        const p = document.querySelector("p");
+
+        div.addEventListener("click",
+            function(event){
+                alert("Div clicked!");
+            }, { once: true }
+        );
+
+        p.addEventListener("click", function(event){
+            alert("P clicked!");
+            event.stopPropagation();
+        })
+
+        function clickMe(){
+            const txtInput = document.querySelector(".input-text");
+            let listItem = document.createElement('li');
+            listItem.textContent = txtInput.value;
+            myUL.appendChild(listItem);
+
+        }
+
+        function doSomething(event){
+            event.preventDefault();
+            let listItem = document.createElement("li");
+            listItem.textContent = theText.value;
+            myUL.appendChild(listItem); 
+        }
+
+        theButton.addEventListener("click", doSomething)
+
+        btnSubmit.addEventListener('click', clickMe);
+    </script>
+  </body>
+</html>

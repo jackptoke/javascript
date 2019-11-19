@@ -1,0 +1,25 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "Playing around with Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackptoke/javascript.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Jack Toke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackptoke/javascript/issues"
+  },
+  "homepage": "https://github.com/jackptoke/javascript#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
